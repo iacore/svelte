@@ -197,7 +197,10 @@ Any time you have a reference to a store, you can access its value inside a comp
 
 Assignments to `$`-prefixed variables require that the variable be a writable store, and will result in a call to the store's `.set` method.
 
-Note that the store must be declared at the top level of the component — not inside an `if` block or a function, for example.
+Note that the store must be defined either...
+
+- at the top level of the component — not inside an `if` block or a function, for example,
+- with `let:` directive, then the store is valid only inside its scope
 
 Local variables (that do not represent store values) must *not* have a `$` prefix.
 

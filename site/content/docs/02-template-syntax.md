@@ -1374,7 +1374,23 @@ Components also support `bind:this`, allowing you to interact with component ins
 </button>
 ```
 
+#### let:key={value}
 
+```sv
+<ComponentWithDefaultSlot let:key={value}>
+	{value}
+<ComponentWithDefalutSlot/>
+
+<ComponentWithNamedSlot>
+	<svelte:fragment slot="slotName" let:key={value}>
+		{value}
+	<svelte:fragment/>
+<ComponentWithNamedSlot/>
+```
+
+Make a component variable visible to the content of its slot.
+
+See [how to expose values within slots](#template-syntax-slot-slot-key-value) to understand the context of this directive.
 
 ### `<slot>`
 
@@ -1483,7 +1499,7 @@ Note that explicitly passing in an empty named slot will add that slot's name to
 
 ---
 
-Slots can be rendered zero or more times, and can pass values *back* to the parent using props. The parent exposes the values to the slot template using the `let:` directive.
+Slots can be rendered zero or more times, and can pass values *back* to the parent using props. The parent exposes the values to the slot template using [the `let:` directive](#template-syntax-element-directives-let-key-value).
 
 The usual shorthand rules apply — `let:item` is equivalent to `let:item={item}`, and `<slot {item}>` is equivalent to `<slot item={item}>`.
 
