@@ -91,7 +91,7 @@ function instance($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$.update = () => {
-		if ($$self.$$.dirty & /*foo*/ 1) {
+		if ($$self.$$.dirty[0] & /*foo*/ 1) {
 			$: $$invalidate(1, bar = foo * 2);
 		}
 	};

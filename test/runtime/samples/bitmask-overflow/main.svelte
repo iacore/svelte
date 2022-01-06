@@ -1,101 +1,138 @@
 <script>
-	export let reads = {};
+	export let _1 = 0;
+	export let _2 = 0;
+	export let _3 = 0;
+	export let _4 = 0;
+	export let _5 = 0;
+	export let _6 = 0;
+	export let _7 = 0;
+	export let _8 = 0;
+	export let _9 = 0;
+	export let _10 = 0;
+	export let _11 = 0;
+	export let _12 = 0;
+	export let _13 = 0;
+	export let _14 = 0;
+	export let _15 = 0;
+	export let _16 = 0;
+	export let _17 = 0;
+	export let _18 = 0;
+	export let _19 = 0;
+	export let _20 = 0;
+	export let _21 = 0;
+	export let _22 = 0;
+	export let _23 = 0;
+	export let _24 = 0;
+	export let _25 = 0;
+	export let _26 = 0;
+	export let _27 = 0;
+	export let _28 = 0;
+	export let _29 = 0;
+	export let _30 = 0;
+	export let _31 = 0;
+	export let _32 = 0;
+	export let _33 = 0;
+	export let _34 = 0;
+	export let _35 = 0;
+	export let _36 = 0;
+	export let _37 = 0;
+	export let _38 = 0;
+	export let _39 = 0;
+	export let _40 = 0;
+	export let _41 = 0;
+	export let _42 = 0;
+	export let _43 = 0;
+	export let _44 = 0;
+	export let _45 = 0;
+	export let _46 = 0;
+	export let _47 = 0;
+	export let _48 = 0;
+	export let _49 = 0;
+	export let _50 = 0;
+	export let _51 = 0;
+	export let _52 = 0;
+	export let _53 = 0;
+	export let _54 = 0;
+	export let _55 = 0;
+	export let _56 = 0;
+	export let _57 = 0;
+	export let _58 = 0;
+	export let _59 = 0;
+	export let _60 = 0;
+	export let _61 = 0;
+	export let _62 = 0;
+	export let _63 = 0;
+	export let _64 = 0;
+	export let _65 = 0;
+	export let _66 = 0;
+	export let _67 = 0;
+	export let _68 = 0;
+	export let _69 = 0;
+	export let _70 = 0;
+	export let _71 = 0;
+	export let _72 = 0;
+	export let _73 = 0;
+	export let _74 = 0;
+	export let _75 = 0;
+	export let _76 = 0;
+	export let _77 = 0;
+	export let _78 = 0;
+	export let _79 = 0;
+	export let _80 = 0;
+	export let _81 = 0;
+	export let _82 = 0;
+	export let _83 = 0;
+	export let _84 = 0;
+	export let _85 = 0;
+	export let _86 = 0;
+	export let _87 = 0;
+	export let _88 = 0;
+	export let _89 = 0;
+	export let _90 = 0;
+	export let _91 = 0;
+	export let _92 = 0;
+	export let _93 = 0;
+	export let _94 = 0;
+	export let _95 = 0;
+	export let _96 = 0;
+	export let _97 = 0;
+	export let _98 = 0;
+	export let _99 = 0;
+	export let _100 = 0;
+	export let _101 = 0;
+	export let _102 = 0;
+	export let _103 = 0;
+	export let _104 = 0;
+	export let _105 = 0;
+	export let _106 = 0;
+	export let _107 = 0;
+	export let _108 = 0;
+	export let _109 = 0;
+	export let _110 = 0;
+	export let _111 = 0;
+	export let _112 = 0;
+	export let _113 = 0;
+	export let _114 = 0;
+	export let _115 = 0;
+	export let _116 = 0;
+	export let _117 = 0;
+	export let _118 = 0;
+	export let _119 = 0;
+	export let _120 = 0;
+	export let _121 = 0;
+	export let _122 = 0;
+	export let _123 = 0;
+	export let _124 = 0;
+	export let _125 = 0;
+	export let _126 = 0;
+	export let _127 = 0;
 
-	export let _0 = '0';
-	export let _1 = '1';
-	export let _2 = '2';
-	export let _3 = '3';
-	export let _4 = '4';
-	export let _5 = '5';
-	export let _6 = '6';
-	export let _7 = '7';
-	export let _8 = '8';
-	export let _9 = '9';
-	export let _10 = '10';
-	export let _11 = '11';
-	export let _12 = '12';
-	export let _13 = '13';
-	export let _14 = '14';
-	export let _15 = '15';
-	export let _16 = '16';
-	export let _17 = '17';
-	export let _18 = '18';
-	export let _19 = '19';
-	export let _20 = '20';
-	export let _21 = '21';
-	export let _22 = '22';
-	export let _23 = '23';
-	export let _24 = '24';
-	export let _25 = '25';
-	export let _26 = '26';
-	export let _27 = '27';
-	export let _28 = '28';
-	export let _29 = '29';
-	export let _30 = '30';
-	export let _31 = '31';
-	export let _32 = '32';
-	export let _33 = '33';
-	export let _34 = '34';
-	export let _35 = '35';
-	export let _36 = '36';
-	export let _37 = '37';
-	export let _38 = '38';
-	export let _39 = '39';
-	export let _40 = '40';
+	export let sum;
 
-	$: foo = read(_6, '_6') + ':' + read(_37, '_37');
-	$: bar = read(_38, '_38');
-
-	const read = (value, label) => {
-		if (!reads[label]) reads[label] = 0;
-		reads[label] += 1;
-
-		return value;
-	};
+	$: {
+		const array = [_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23,_24,_25,_26,_27,_28,_29,_30,_31,_32,_33,_34,_35,_36,_37,_38,_39,_40,_41,_42,_43,_44,_45,_46,_47,_48,_49,_50,_51,_52,_53,_54,_55,_56,_57,_58,_59,_60,_61,_62,_63,_64,_65,_66,_67,_68,_69,_70,_71,_72,_73,_74,_75,_76,_77,_78,_79,_80,_81,_82,_83,_84,_85,_86,_87,_88,_89,_90,_91,_92,_93,_94,_95,_96,_97,_98,_99,_100,_101,_102,_103,_104,_105,_106,_107,_108,_109,_110,_111,_112,_113,_114,_115,_116,_117,_118,_119,_120,_121,_122,_123,_124,_125,_126,_127,];
+		sum = array.reduce((a, b) => a+b, 0)
+	}
 </script>
 
-<p>{read(_0, '_0')}</p>
-<p>{read(_1, '_1')}</p>
-<p>{read(_2, '_2')}</p>
-<p>{read(_3, '_3')}</p>
-<p>{read(_4, '_4')}</p>
-<p>{read(_5, '_5')}</p>
-<p>{read(_6, '_6')}</p>
-<p>{read(_7, '_7')}</p>
-<p>{read(_8, '_8')}</p>
-<p>{read(_9, '_9')}</p>
-<p>{read(_10, '_10')}</p>
-<p>{read(_11, '_11')}</p>
-<p>{read(_12, '_12')}</p>
-<p>{read(_13, '_13')}</p>
-<p>{read(_14, '_14')}</p>
-<p>{read(_15, '_15')}</p>
-<p>{read(_16, '_16')}</p>
-<p>{read(_17, '_17')}</p>
-<p>{read(_18, '_18')}</p>
-<p>{read(_19, '_19')}</p>
-<p>{read(_20, '_20')}</p>
-<p>{read(_21, '_21')}</p>
-<p>{read(_22, '_22')}</p>
-<p>{read(_23, '_23')}</p>
-<p>{read(_24, '_24')}</p>
-<p>{read(_25, '_25')}</p>
-<p>{read(_26, '_26')}</p>
-<p>{read(_27, '_27')}</p>
-<p>{read(_28, '_28')}</p>
-<p>{read(_29, '_29')}</p>
-<p>{read(_30, '_30')}</p>
-<p>{read(_31, '_31')}</p>
-<p>{read(_32, '_32')}</p>
-<p>{read(_33, '_33')}</p>
-<p>{read(_34, '_34')}</p>
-<p>{read(_35, '_35')}</p>
-<p>{read(_36, '_36')}</p>
-<p>{read(_37, '_37')}</p>
-<p>{read(_38, '_38')}</p>
-<p>{read(_39, '_39')}</p>
-<p>{read(_40, '_40')}</p>
-
-<p>{read(_5, '_5') + ':' + read(_36, '_36')}</p>
-<p>{foo}</p>
-<p>{bar}</p>
+Sum: {sum}

@@ -3,6 +3,7 @@ import { x, p } from 'code-red';
 import Block from '../../Block';
 import TemplateScope from '../../../nodes/shared/TemplateScope';
 import { BinaryExpression } from 'estree';
+import { BITMASK_SIZE } from '../../../../utils/bitmask';
 
 export function get_slot_definition(block: Block, scope: TemplateScope, lets: Let[]) {
 	if (lets.length === 0) return { block, scope };
@@ -72,12 +73,12 @@ export function get_slot_definition(block: Block, scope: TemplateScope, lets: Le
 
 				Array.from(names).forEach(name => {
 					const i = context_lookup.get(name).index.value as number;
-					const g = Math.floor(i / 31);
+					const g = Math.floor(i / BITMASK_SIZE);
 
 					const lookup_name = names_lookup.has(name) ? names_lookup.get(name) : name;
 
 					if (!grouped[g]) grouped[g] = [];
-					grouped[g].push({ name: lookup_name, n: i % 31 });
+					grouped[g].push({ name: lookup_name, n: i % BITMASK_SIZE });
 				});
 
 				const elements = [];

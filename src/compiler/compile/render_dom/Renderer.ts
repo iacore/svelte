@@ -7,6 +7,7 @@ import { Node, Identifier, MemberExpression, Literal, Expression, BinaryExpressi
 import flatten_reference from '../utils/flatten_reference';
 import { reserved_keywords } from '../utils/reserved_keywords';
 import { renderer_invalidate } from './invalidate';
+import { BITMASK_SIZE } from '../../utils/bitmask';
 
 interface ContextMember {
 	name: string;
@@ -102,7 +103,7 @@ export default class Renderer {
 
 		this.fragment.render(this.block, null, x`#nodes` as Identifier);
 
-		this.context_overflow = this.context.length > 31;
+		this.context_overflow = this.context.length > BITMASK_SIZE;
 
 		this.context.forEach(member => {
 			const { variable } = member;
@@ -191,8 +192,8 @@ export default class Renderer {
 				}
 
 				const value = member.index.value as number;
-				const i = (value / 31) | 0;
-				const n = 1 << (value % 31);
+				const i = (value / BITMASK_SIZE) | 0;
+				const n = 1 << (value % BITMASK_SIZE);
 
 				if (!bitmask[i]) bitmask[i] = { n: 0, names: [] };
 
@@ -212,8 +213,8 @@ export default class Renderer {
 			get expression() {
 				const bitmask = get_bitmask();
 
-				if (!bitmask.length) {
-					return x`${dirty} & /*${names.join(', ')}*/ 0` as BinaryExpression;
+				if (bitmask.length === 0) {
+					return x`false` as BinaryExpression;
 				}
 
 				if (renderer.context_overflow) {
@@ -224,7 +225,7 @@ export default class Renderer {
 						.reduce((lhs, rhs) => x`${lhs} | ${rhs}`);
 				}
 
-				return x`${dirty} & /*${names.join(', ')}*/ ${bitmask[0].n}` as BinaryExpression;
+				return x`${dirty}[0] & /*${names.join(', ')}*/ ${bitmask[0].n}` as BinaryExpression;
 			}
 		} as any;
 	}
@@ -242,7 +243,7 @@ export default class Renderer {
 			// as [-1]
 			get elements() {
 				const elements = [];
-				for (let i = 0; i < _this.context.length; i += 31) {
+				for (let i = 0; i < _this.context.length; i += BITMASK_SIZE) {
 					elements.push(val);
 				}
 				return elements;

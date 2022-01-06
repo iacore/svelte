@@ -11,6 +11,7 @@ import { apply_preprocessor_sourcemap } from '../../utils/mapped_code';
 import { RawSourceMap, DecodedSourceMap } from '@ampproject/remapping/dist/types/types';
 import { flatten } from '../../utils/flatten';
 import check_enable_sourcemap from '../utils/check_enable_sourcemap';
+import { BITMASK_SIZE } from '../../utils/bitmask';
 
 export default function dom(
 	component: Component,
@@ -511,7 +512,7 @@ export default function dom(
 	let dirty;
 	if (renderer.context_overflow) {
 		dirty = x`[]`;
-		for (let i = 0; i < renderer.context.length; i += 31) {
+		for (let i = 0; i < renderer.context.length; i += BITMASK_SIZE) {
 			dirty.elements.push(x`-1`);
 		}
 	}

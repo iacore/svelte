@@ -3,6 +3,7 @@ import { current_component, set_current_component } from './lifecycle';
 import { blank_object, is_empty, is_function, run, run_all, noop } from './utils';
 import { children, detach, start_hydrating, end_hydrating } from './dom';
 import { transition_in } from './transitions';
+import { BITMASK_SIZE } from '../../compiler/utils/bitmask';
 
 /**
  * INTERNAL, DO NOT USE. Code may change at any time.
@@ -101,7 +102,7 @@ function make_dirty(component, i) {
 		schedule_update();
 		component.$$.dirty.fill(0);
 	}
-	component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+	component.$$.dirty[(i / BITMASK_SIZE) | 0] |= (1 << (i % BITMASK_SIZE));
 }
 
 export function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {

@@ -57,7 +57,7 @@ function instance($$self, $$props, $$invalidate) {
 	});
 
 	$$self.$$.update = () => {
-		if ($$self.$$.dirty & /*b*/ 2) {
+		if ($$self.$$.dirty[0] & /*b*/ 2) {
 			$: $$invalidate(0, y = b * 2);
 		}
 	};
